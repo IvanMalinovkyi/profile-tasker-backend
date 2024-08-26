@@ -1,4 +1,4 @@
-import { Prisma } from 'prisma/schema/generated/client';
+import { Prisma } from 'prisma/generated/client';
 
 export const returnUserObject: Prisma.UserSelect = {
   id: true,

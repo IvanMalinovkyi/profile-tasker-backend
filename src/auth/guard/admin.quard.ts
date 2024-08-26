@@ -4,7 +4,7 @@ import {
   ForbiddenException,
   Injectable,
 } from '@nestjs/common';
-import { User, UserRole } from 'prisma/schema/generated/client';
+import { User, UserRole } from 'prisma/generated/client';
 
 Injectable();
 export class AdminQuard implements CanActivate {

@@ -6,7 +6,7 @@ import {
   IsString,
   MinLength,
 } from 'class-validator';
-import { UserRole } from 'prisma/schema/generated/client';
+import { UserRole } from 'prisma/generated/client';
 
 export class UserDto {
   @ApiProperty()
