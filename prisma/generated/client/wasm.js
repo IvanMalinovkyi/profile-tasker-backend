@@ -119,6 +119,16 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  email: 'email',
+  password: 'password',
+  name: 'name',
+  role: 'role'
+};
+
 exports.Prisma.QuestionnaireScalarFieldEnum = {
   id: 'id',
   createdAt: 'createdAt',
@@ -144,16 +154,6 @@ exports.Prisma.TechnologyScalarFieldEnum = {
   version: 'version'
 };
 
-exports.Prisma.UserScalarFieldEnum = {
-  id: 'id',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  email: 'email',
-  password: 'password',
-  name: 'name',
-  role: 'role'
-};
-
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -174,10 +174,10 @@ exports.UserRole = exports.$Enums.UserRole = {
 };
 
 exports.Prisma.ModelName = {
+  User: 'User',
   Questionnaire: 'Questionnaire',
   Task: 'Task',
-  Technology: 'Technology',
-  User: 'User'
+  Technology: 'Technology'
 };
 
 /**

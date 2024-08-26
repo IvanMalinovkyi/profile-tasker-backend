@@ -9,10 +9,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum UserRole {
-  USER
-  ADMIN
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  email    String @unique
+  password String
+
+  name String    @default("No name")
+  role UserRole? @default(USER)
+
+  tasks         Task[]
+  questionnaire Questionnaire?
+
+  @@map("user")
 }
+
 
 model Questionnaire {
   id        String   @id @default(cuid())
@@ -51,19 +64,8 @@ model Technology {
   @@map("technology")
 }
 
-model User {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
 
-  email    String @unique
-  password String
-
-  name String    @default("No name")
-  role UserRole? @default(USER)
-
-  tasks         Task[]
-  questionnaire Questionnaire?
-
-  @@map("user")
+enum UserRole {
+  USER
+  ADMIN
 }

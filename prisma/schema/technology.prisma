@@ -1,7 +1,0 @@
-model Technology {
-  id      String @id @default(cuid())
-  name    String
-  version String
-
-  @@map("technology")
-}
